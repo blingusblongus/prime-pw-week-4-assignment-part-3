@@ -6,12 +6,18 @@ let basket = [];
 const maxItems = 5;
 
 function addItem(item){
+  if(isFull()) return false;
+
   basket.push(item);
   return true;
 }
 
 console.log('test - should return true', addItem('pizza'));
 console.log('Basket:', basket);
+
+//stretch tests
+//basket = ['a','a','a','b','c'];
+console.log('test - should return true', addItem('eggs'));
 
 function listItems(){
   for(let item of basket){
