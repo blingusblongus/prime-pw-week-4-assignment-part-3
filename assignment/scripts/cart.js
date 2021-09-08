@@ -40,6 +40,7 @@ function isFull(){
   return true;
 }
 
+//test isFull with different basket values
 console.log('Test isFull - should be false');
 basket = ['a','a','a','b'];
 console.log(isFull());
@@ -51,9 +52,8 @@ function removeItem(item){
   let index = basket.indexOf(item);
   console.log('index ', index);
   return index === -1 ? null : basket.splice(index, 1);
-
 }
 
 console.log(basket);
-console.log(removeItem('a'));
+console.log('removed: ', removeItem('a'));
 console.log(basket);
