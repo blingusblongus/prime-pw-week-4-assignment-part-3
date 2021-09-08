@@ -8,3 +8,22 @@ function addItem(item){
   basket.push(item);
   return true;
 }
+
+console.log('test - should return true', addItem('pizza'));
+console.log('Basket:', basket);
+
+function listItems(){
+  for(let item of basket){
+    console.log(item);
+  }
+}
+
+console.log('Test listItems()');
+listItems();
+
+function empty(){
+  basket = [];
+}
+
+empty();
+console.log('Test empty(), should be empty array:', basket);
