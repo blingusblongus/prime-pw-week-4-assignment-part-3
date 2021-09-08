@@ -17,7 +17,7 @@ console.log('Basket:', basket);
 
 //stretch tests
 //basket = ['a','a','a','b','c'];
-console.log('test - should return true', addItem('eggs'));
+//console.log('test - should return false', addItem('eggs'));
 
 function listItems(){
   for(let item of basket){
@@ -46,3 +46,14 @@ console.log(isFull());
 console.log('Test isFull - should be true');
 basket = ['a','a','a','b','c'];
 console.log(isFull());
+
+function removeItem(item){
+  let index = basket.indexOf(item);
+  console.log('index ', index);
+  return index === -1 ? null : basket.splice(index, 1);
+
+}
+
+console.log(basket);
+console.log(removeItem('a'));
+console.log(basket);
