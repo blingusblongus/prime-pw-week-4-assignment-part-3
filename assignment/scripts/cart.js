@@ -5,9 +5,9 @@ console.log('***** Cart Functions *****');
 let basket = [];
 const maxItems = 5;
 
-function addItem(item){
-  if(isFull()) return false;
-
+function addItem(item) {
+  if (isFull()) return false;
+  //pushes item if basket isn't full
   basket.push(item);
   return true;
 }
@@ -19,8 +19,8 @@ console.log('Basket:', basket);
 //basket = ['a','a','a','b','c'];
 //console.log('test - should return false', addItem('eggs'));
 
-function listItems(){
-  for(let item of basket){
+function listItems() {
+  for (let item of basket) {
     console.log(item);
   }
 }
@@ -28,32 +28,34 @@ function listItems(){
 console.log('Test listItems()');
 listItems();
 
-function empty(){
+function empty() {
   basket = [];
 }
 
 empty();
 console.log('Test empty(), should be empty array:', basket);
 
-function isFull(){
-  if(basket.length < maxItems) return false;
+function isFull() {
+  if (basket.length < maxItems) return false;
   return true;
 }
 
 //test isFull with different basket values
 console.log('Test isFull - should be false');
-basket = ['a','a','a','b'];
+basket = ['a', 'a', 'a', 'b'];
 console.log(isFull());
 console.log('Test isFull - should be true');
-basket = ['a','a','a','b','c'];
+basket = ['a', 'a', 'a', 'b', 'c'];
 console.log(isFull());
 
-function removeItem(item){
+function removeItem(item) {
   let index = basket.indexOf(item);
   console.log('index ', index);
   return index === -1 ? null : basket.splice(index, 1);
 }
 
+//test removeItem
+basket = ['a', 'a', 'a', 'b', 'c'];
 console.log(basket);
 console.log('removed: ', removeItem('a'));
 console.log(basket);
